@@ -3,7 +3,7 @@
     <head>
         <h1>Hello World</h1>
          <link rel="stylesheet" 
-               href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+               href="http://cdn.leafletjs.com/leaflet-0.7/leaflet.css" />
     </head>
     
 <body>
@@ -11,17 +11,13 @@
  
         <div id="mapid"/div>
     #mapid { height: 180px; }
-           <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+           <script src="http://cdn.leafletjs.com/leaflet-0.7/leaflet.js"></script>
      <script
         var mymap = L.map('mapid').setView([51.505, -0.09], 13);
         mapLink = 
             '<a href="http://openstreetmap.org">OpenStreetMap</a>';
-    L.tileLayer('https://api.mapbox.com/styles/v1/lanimrod/cizt1vokg004v2supe64vwte3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuaW1yb2QiLCJhIjoiY2l5M2dwajc2MDAwNzJxczZqY3pubDhhNCJ9.9KULVW-m1sqXKuqRnopyVg', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    maxZoom: 18,
-    id: 'lanimrod',
-    accessToken: 'pk.eyJ1IjoibGFuaW1yb2QiLCJhIjoiY2l5M2dwajc2MDAwNzJxczZqY3pubDhhNCJ9.9KULVW-m1sqXKuqRnopyVg'
-}).addTo(mymap);
+    L.tileLayer('https://api.mapbox.com/styles/v1/lanimrod/cizt1vokg004v2supe64vwte3/tiles/256/{z}/{x}/{y}.png', 
+    {attribution: "Mapbox"}).addTo(mymap);
     >         
     </script>
 </body>
