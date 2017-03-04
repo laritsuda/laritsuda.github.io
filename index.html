@@ -14,21 +14,14 @@
   <body>
         <div id="mapid" style="width: 230px; height: 180px"></div>
         <script type ="text/javascript">
-        var basemap = L.tileLayer(
-                'https://api.mapbox.com/styles/v1/lanimrod/cizt1vokg004v2supe64vwte3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuaW1yb2QiLCJhIjoiY2l5M2dwajc2MDAwNzJxczZqY3pubDhhNCJ9.9KULVW-m1sqXKuqRnopyVg',
-                                  {     maxZoom: 18     });
-
-        $.getJSON('Parks.json', function(data) {
-                var geojson = L.geoJson(data, {
-                  onEachFeature: function (feature, layer) {
-                          layer.bindPopup(feature.properties.NAME + '<br />'
-                                                        + feature.properties.ADDRESS);
-                  }
-                });
         var map = L.map('mapid').setView([51.505, -0,09], 13);
-        basemap.addTo(map);
-        geojson.addTo(map);
-        });
+        mapLink = 
+            '<a href="http://openstreetmap.org">OpenStreetMap</a>';
+        L.tileLayer(
+            'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: 'Map data &copy; ' + mapLink,
+            maxZoom: 18,
+            }).addTo(map);
 
   </script>
  </body>
