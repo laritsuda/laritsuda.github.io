@@ -25,8 +25,8 @@
   $.getJSON('Parks.json', function(data) {
                 var geojson = L.geoJson(data, {
                   onEachFeature: function (feature, layer) {
-                          layer.bindPopup(feature.properties.NAME + '<br />'
-                                                        + feature.properties.ADDRESS);
+                          layer.bindPopup(feature.properties.park_name + '<br />'
+                                                        + feature.properties.address);
                   }
                 });
         var marker = L.marker([51.5, -0,09])
