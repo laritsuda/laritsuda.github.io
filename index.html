@@ -22,13 +22,7 @@
             attribution: 'Map data &copy; ' + mapLink,
             maxZoom: 18,
             }).addTo(map);
-  $.getJSON('Parks.geojson', function(data) {
-                var geojson = L.geoJson(data, {
-                  onEachFeature: function (feature, layer) {
-                          layer.bindPopup(feature.properties.park_name + '<br />'
-                                                        + feature.properties.address);
-                  }
-                });
+ 
         var marker = L.marker([51.5, -0,09])
         .addTo(map)
         .bindPopup("<b>Palazzo Ducale</b><br>Museo di Veneza")
