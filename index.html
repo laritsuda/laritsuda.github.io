@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-        <title>City of Austin - Parks</title>
-        <link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.css" />
-        <script src="http://cdn.leafletjs.com/leaflet-0.7.2/leaflet.js"></script>
-        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <title>Quick Start Mao</title>
+       <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
+       <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
+      <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
         <style>
         body {padding: 0; margin: 0 }
         html, body, #map { height: 100% }
@@ -12,10 +12,10 @@
   </head>
 
   <body>
-        <div id="map"></div>
+        <div id="mapid" style="width: 230px; height: 180px"></div>
         <script type ="text/javascript">
         var basemap = L.tileLayer(
-                'http://{s}.tiles.mapbox.com/v3/sarasafavi.hjegnofh/{z}/{x}/{y}.png',
+                'https://api.mapbox.com/styles/v1/lanimrod/cizt1vokg004v2supe64vwte3/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuaW1yb2QiLCJhIjoiY2l5M2dwajc2MDAwNzJxczZqY3pubDhhNCJ9.9KULVW-m1sqXKuqRnopyVg',
                                   {     maxZoom: 18     });
 
         $.getJSON('Parks.json', function(data) {
@@ -25,7 +25,7 @@
                                                         + feature.properties.ADDRESS);
                   }
                 });
-        var map = L.map('map').setView([30.260, -97.770], 12);
+        var map = L.map('mapid').setView([51.505, -0,09], 13);
         basemap.addTo(map);
         geojson.addTo(map);
         });
