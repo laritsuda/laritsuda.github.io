@@ -1,0 +1,11 @@
+{
+"type": "FeatureCollection",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "name": "Coffee House", "address": "Paul St" }, "geometry": { "type": "Point", "coordinates": [ -0.024139871215373, 51.493949109841111 ] } },
+{ "type": "Feature", "properties": { "id": 2, "name": "El corte ingles", "address": "Chueca st" }, "geometry": { "type": "Point", "coordinates": [ -0.019069083479053, 51.494466166909042 ] } },
+{ "type": "Feature", "properties": { "id": 3, "name": "Casa Battlo", "address": "Diagonal Ave" }, "geometry": { "type": "Point", "coordinates": [ -0.017989613460051, 51.492452365697119 ] } },
+{ "type": "Feature", "properties": { "id": 4, "name": "Palau de la Musica", "address": "El Born" }, "geometry": { "type": "Point", "coordinates": [ -0.018452243468195, 51.497396156960619 ] } },
+{ "type": "Feature", "properties": { "id": 5, "name": "Barcelona love", "address": "Every bit of me" }, "geometry": { "type": "Point", "coordinates": [ -0.01554946694651, 51.498502840509516 ] } }
+]
+}
