@@ -42,13 +42,26 @@
                 [51.51, -0.047]
 ]).addTo(map);
  
-var poly_london_test = L.geoJSON(poly_london_test, {style: myStyle}).addTo(map);   
-var POI = L.geoJSON(POI, {style: myStyle}).addTo(map);    
- var myStyle = {
+var poly_london_test = L.geoJSON(poly_london_test, {style: myStyle}).addTo(map);    
+var myStyle = {
       color: '#0000ff',
       weight: 5,
       opacity: 0.65
-  };            
+  }; 
+var geojsonMarkerOptions = {
+    radius: 8,
+    fillColor: "#ff7800",
+    color: "#000",
+    weight: 1,
+    opacity: 1,
+    fillOpacity: 0.8
+};
+
+L.geoJSON(POI, {
+    pointToLayer: function (POI) {
+        return L.circleMarker(geojsonMarkerOptions);
+    }
+}).addTo(map);
   </script>
  </body>
 </html>
