@@ -39,7 +39,12 @@
                 [51.503, -0.06],
                 [51.51, -0.047]
 ]).addTo(map);
-  var geojson = new L.geoJSON("poly_london_test.geojson");
+  var myStyle = {
+      "color": "#0000ff",
+      "weight": 5,
+      "opacity": 0.65
+  };
+  var geojson = new L.geoJSON("poly_london_test.geojson", {style: myStyle});
 geojson.addTo(map);    
             
   </script>
