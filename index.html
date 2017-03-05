@@ -5,7 +5,7 @@
        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" />
        <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js"></script>
        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
-      <script src="poly_london_test.geojson" type="text/javascript"></script>
+       <script src="poly_london_test.geojson" type="text/javascript"></script>
         <style>
         body {padding: 0; margin: 0 }
         html, body, #map { height: 100% }
@@ -44,7 +44,8 @@
       "weight": 5,
       "opacity": 0.65
   };
-L.geoJSON("poly_london_test.geojson", {style: myStyle}).addTo(map);    
+var hydro = new L.LayerGroup();
+L.geoJSON(poly_london_test, {style: myStyle}).addTo(map);    
             
   </script>
  </body>
