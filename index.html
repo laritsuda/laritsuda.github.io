@@ -42,18 +42,9 @@
                 [51.51, -0.047]
 ]).addTo(map);
  
-var poly_london = new L.geoJSON();
+var poly_london_test = L.geoJSON(poly_london_test, {style: myStyle}).addTo(map);   
+var POI = L.geoJSON(POI, {style: myStyle}).addTo(map);
 poly_london.addTo(map);    
-            
-$.ajax({
-    dataType: "json",
-    url:"laritsuda.github.io/poly_london_test",
-    success: function(data) {
-        $(data.features).each(function(key, data) {
-            poly_london_test.addData(data);
-        });
-    }
-}).error(function() {});
     var myStyle = {
       color: '#0000ff',
       weight: 5,
