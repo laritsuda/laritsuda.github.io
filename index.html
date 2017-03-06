@@ -41,10 +41,9 @@
 ]).addTo(map);
             
 //load GeoJSON from an external file
-$.getJSON("POI.geojson", function(data){
-//add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(map);
-})
+$.getJSON("poly_london_test.geojson",function(data){
+L.geoJson(data).addTo(map);
+});
  
   </script>
  </body>
