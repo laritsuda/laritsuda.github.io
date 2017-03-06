@@ -1,3 +1,4 @@
+<!DOCTYPE HTML SYSTEM>
 <html>
   <head>
        <title>Quick Start Leaflet Map</title>
@@ -42,6 +43,7 @@
 //load GeoJSON from an external file
 $.getJSON("poly_london_test.geojson",function(data){
 L.geoJson(data).addTo(map);
+    
 });
 $.getJSON("POI.geojson",function(data){
     var bigbenIcon = L.icon({
@@ -49,12 +51,12 @@ $.getJSON("POI.geojson",function(data){
         iconSize: [50,40]
     });
 L.geoJson(data,{
-    pointToLayer: function(feature,latlng){
-    var L.marker(latlng,{icon:bigbenIcon});
-    marker.bindPopup(feature.properties.name + '</br>' + feature.properties.address);
-    return marker;
-    }
-}).addTo(map);
+ pointToLayer: function(feature,latlng){
+     var marker = L.marker(latlng,{icon: bigbenIcon});
+        marker.bindPopup(feature.properties.name + '<br/>' + feature.properties.address);
+     return marker;
+    }    
+ }).addTo(map);
 });
   </script>
  </body>
