@@ -44,7 +44,17 @@ $.getJSON("poly_london_test.geojson",function(data){
 L.geoJson(data).addTo(map);
 });
 $.getJSON("POI.geojson",function(data){
-L.geoJson(data).addTo(map);
+    var bigbenIcon = L.icon({
+        iconUrl: 'bigben.png',
+        iconSize: [50,40]
+    });
+L.geoJson(data,{
+    pointToLayer: function(feature,latlng){
+    var L.marker(latlng,{icon:bigbenIcon});
+    marker.bindPopup(feature.properties.name + '</br>' + feature.properties.address);
+    return marker;
+    }
+}).addTo(map);
 });
   </script>
  </body>
