@@ -23,6 +23,8 @@
             attribution: 'Map data &copy; ' + mapLink,
             maxZoom: 18,
             }).addTo(map);
+            
+    // Later, add a satellite imagery basemap right here
  
        var marker = L.marker([51.5, -0,09])
         .addTo(map)
@@ -45,7 +47,24 @@ $.getJSON("poly_london_test.geojson",function(data){
 L.geoJson(data).addTo(map);
     
 });
+            
+//POI #1
 $.getJSON("POI.geojson",function(data){
+    var egyptIcon = L.icon({
+        iconUrl: 'egypt.png',
+        iconSize: [50,40]
+    });
+L.geoJson(data,{
+ pointToLayer: function(feature,latlng){
+     var marker = L.marker(latlng,{icon: egyptIcon});
+        marker.bindPopup(feature.properties.name + '<br/>' + feature.properties.address);
+     return marker;
+    }    
+ }).addTo(map);
+});
+            
+//POI #2
+$.getJSON("POI_2.geojson",function(data){
     var bigbenIcon = L.icon({
         iconUrl: 'bigben.png',
         iconSize: [50,40]
@@ -58,6 +77,19 @@ L.geoJson(data,{
     }    
  }).addTo(map);
 });
+//Setting a variable for all POIs<--NÃO ESTÁ FUNCIONANDO, MAS RESOLVI TESTAR O SATELLITE IMAGE BASEMAP
+var pois = L.layerGroup([marker, circle, polygon, bigbenIcon, egyptIcon]);
+            
+var baseMaps = {
+    "OSM Map": map
+};
+
+var overlayMaps = {
+    "POIs": pois
+};
+
+L.control.layers(baseMaps, overlayMaps).addTo(map);
+            
   </script>
  </body>
 </html>
