@@ -13,26 +13,20 @@
   </head>
 
   <body>
+      //Adding base layers
         <div id="mapid" style="width: 600px; height: 400px"></div>
         <script type ="text/javascript">
-        var satellite = L.tileLayer('https://api.mapbox.com/styles/v1/lanimrod/cj00bakxl008r2so240f8bvnm/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuaW1yb2QiLCJhIjoiY2l5M2dwajc2MDAwNzJxczZqY3pubDhhNCJ9.9KULVW-m1sqXKuqRnopyVg', {id: 'mapId'}),
+        var satellite = L.tileLayer('https://api.mapbox.com/styles/v1/lanimrod/cj00bakxl008r2so240f8bvnm/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuaW1yb2QiLCJhIjoiY2l5M2dwajc2MDAwNzJxczZqY3pubDhhNCJ9.9KULVW-m1sqXKuqRnopyVg', {
+            id: 'mapId', 
+            attribution: 'Imagery by <a href="https://www.mapbox.com/about/maps/">© Mapbox</a>, and by <a href="https://www.digitalglobe.com">© DigitalGlobe </a>'});
             
-            citymap = L.tileLayer('https://api.mapbox.com/styles/v1/lanimrod/cj00czybu007z2rs68p4sbzbf/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuaW1yb2QiLCJhIjoiY2l5M2dwajc2MDAwNzJxczZqY3pubDhhNCJ9.9KULVW-m1sqXKuqRnopyVg', {id: 'mapId'});  
+            citymap = L.tileLayer('https://api.mapbox.com/styles/v1/lanimrod/cj00czybu007z2rs68p4sbzbf/tiles/256/{z}/{x}/{y}?access_token=pk.eyJ1IjoibGFuaW1yb2QiLCJhIjoiY2l5M2dwajc2MDAwNzJxczZqY3pubDhhNCJ9.9KULVW-m1sqXKuqRnopyVg', {id: 'mapId', 
+            attribution: 'Tiles by <a href="http://openstreetmap.org">OpenStreetMap</a>'});  
             
         var map = L.map('mapid',{center: [51.505, -0,09], zoom:13,layers: [satellite, citymap]
 
             });
-       
-       // mapLink = 
-            //'<a href="http://openstreetmap.org">OpenStreetMap</a>';
-        //L.tileLayer(
-            //'http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-            //attribution: 'Map data &copy; ' + mapLink,
-            //maxZoom: 18,
-            //}).addTo(map);
-            
-    // Later, add a satellite imagery basemap right here
- 
+        
        var marker = L.marker([51.5, -0,09])
         .addTo(map)
         .bindPopup("<b>Palazzo Ducale</b><br>Museo di Veneza")
